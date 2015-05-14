@@ -3,7 +3,7 @@ SPAUTH_URL :=  http://download.sopcast.com/download/$(SPAUTH_TGZ)
 PLAYER_TGZ := sopcast-player-0.8.5.tar.gz
 PLAYER_URL := https://sopcast-player.googlecode.com/files/$(PLAYER_TGZ)
 
-all: /usr/local/bin/sp-sc-auth /usr/local/bin/sopcast-player
+all: /usr/lib/i386-linux-gnu/libstdc++.so.5 /usr/lib/libgettextlib-0.19.3.so /usr/local/bin/sp-sc-auth /usr/local/bin/sopcast-player
 
 PHONY: clean realclean distclean all
 
@@ -25,19 +25,19 @@ sopcast-player-0.8.5.tar.gz: /usr/bin/wget
 	/usr/bin/wget --no-use-server-timestamps $(PLAYER_URL)
 
 /usr/bin/wget:
-	sudo apt-get install wget
+	sudo apt-get -y install wget
 
 /bin/tar:
-	sudo apt-get install tar
+	sudo apt-get -y install tar
 
 /usr/lib/i386-linux-gnu/libstdc++.so.5:
-	sudo apt-get install libstdc++5:i386
+	sudo apt-get -y install libstdc++5:i386
 
 /usr/lib/libgettextlib-0.19.3.so:
 	sudo apt-get install gettext
 
 /usr/bin/sudo:
-	sudo apt-get install sudo
+	sudo apt-get -y install sudo
 
 clean:
 	-rm -rf sopcast-player sp-auth
