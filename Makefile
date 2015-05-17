@@ -3,7 +3,7 @@ SPAUTH_URL :=  http://download.sopcast.com/download/$(SPAUTH_TGZ)
 PLAYER_TGZ := sopcast-player-0.8.5.tar.gz
 PLAYER_URL := https://sopcast-player.googlecode.com/files/$(PLAYER_TGZ)
 
-all: /usr/lib/i386-linux-gnu/libstdc++.so.5 /usr/lib/libgettextlib-0.19.3.so /usr/local/bin/sp-sc-auth /usr/local/bin/sopcast-player
+all: /usr/lib/i386-linux-gnu/libstdc++.so.5 /usr/lib/libgettextlib-0.19.3.so /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so /usr/lib/python2.7/dist-packages/gtk-2.0/gtk/glade.so /usr/local/bin/sp-sc-auth /usr/local/bin/sopcast-player
 
 PHONY: clean realclean distclean all
 
@@ -34,7 +34,13 @@ sopcast-player-0.8.5.tar.gz: /usr/bin/wget
 	sudo apt-get -y install libstdc++5:i386
 
 /usr/lib/libgettextlib-0.19.3.so:
-	sudo apt-get install gettext
+	sudo apt-get -y install gettext
+
+/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so:
+	sudo apt-get -y install libcanberra-gtk-module
+
+/usr/lib/python2.7/dist-packages/gtk-2.0/gtk/glade.so:
+	sudo apt-get -y install python-glade2
 
 /usr/bin/sudo:
 	sudo apt-get -y install sudo
