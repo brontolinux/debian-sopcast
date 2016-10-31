@@ -1,7 +1,8 @@
 SPAUTH_TGZ := sp-auth.tgz
 SPAUTH_URL :=  http://download.sopcast.com/download/$(SPAUTH_TGZ)
 PLAYER_TGZ := sopcast-player-0.8.5.tar.gz
-PLAYER_URL := https://sopcast-player.googlecode.com/files/$(PLAYER_TGZ)
+PLAYER_URL := https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/sopcast-player/$(PLAYER_TGZ)
+
 
 all: add_arch_i386 /usr/lib/i386-linux-gnu/libstdc++.so.5 /usr/lib/libgettextlib-0.19.3.so /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so /usr/lib/python2.7/dist-packages/gtk-2.0/gtk/glade.so /usr/local/bin/sp-sc-auth /usr/local/bin/sopcast-player
 
